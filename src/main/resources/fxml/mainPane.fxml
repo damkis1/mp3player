@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 
-<BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.damkis1.mp3player.controller.MainController">
    <top>
       <AnchorPane BorderPane.alignment="CENTER">
          <children>
@@ -20,14 +20,14 @@
               <menus>
                 <Menu mnemonicParsing="false" text="Plik">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Otwórz plik" />
-                        <MenuItem mnemonicParsing="false" text="Otwórz folder" />
-                        <MenuItem mnemonicParsing="false" text="Zamknij" />
+                    <MenuItem fx:id="fileMenuItem" mnemonicParsing="false" text="Otwórz plik" />
+                        <MenuItem fx:id="dirMenuItem" mnemonicParsing="false" text="Otwórz folder" />
+                        <MenuItem fx:id="closeMenuItem" mnemonicParsing="false" text="Zamknij" />
                   </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Pomoc">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="O programie" />
+                    <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" text="O programie" />
                   </items>
                 </Menu>
               </menus>
@@ -48,11 +48,11 @@
    <bottom>
       <HBox BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
-            <ToggleButton mnemonicParsing="false" text="ToggleButton" />
-            <Slider />
-            <Slider />
+            <Button fx:id="previousButton" mnemonicParsing="false" text="Button" />
+            <ToggleButton fx:id="playButton" mnemonicParsing="false" text="ToggleButton" />
+            <Button fx:id="nextButton" mnemonicParsing="false" text="Button" />
+            <Slider fx:id="volumeSlider" />
+            <Slider fx:id="progressSlider" />
          </children></HBox>
    </bottom>
 </BorderPane>
