@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml" fx:controller="pl.damkis1.mp3player.controller.MenuPaneController">
+    <MenuBar>
+        <menus>
+            <Menu mnemonicParsing="false" text="Plik">
+                <items>
+                    <MenuItem fx:id="fileMenuItem" mnemonicParsing="false" text="Otwórz plik"/>
+                    <MenuItem fx:id="dirMenuItem" mnemonicParsing="false" text="Otwórz folder"/>
+                    <MenuItem fx:id="closeMenuItem" mnemonicParsing="false" text="Zamknij"/>
+                </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Pomoc">
+                <items>
+                    <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" text="O programie"/>
+                </items>
+            </Menu>
+        </menus>
+    </MenuBar>
+</AnchorPane>

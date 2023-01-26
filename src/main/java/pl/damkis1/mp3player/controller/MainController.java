@@ -36,28 +36,7 @@ public class MainController {
     @FXML
     private Slider volumeSlider;
 
-
-    public void initialize(){
-        System.out.println("MainController created");
-        configureVolume();
-        configureButtons();
+    public void initialize() {
+        System.out.println("Main controller created");
     }
-
-    private void configureVolume(){
-        volumeSlider.addEventFilter(MouseEvent.MOUSE_PRESSED, event ->{
-            System.out.println("Wciśnięto przysisk na suwaku");
-        });
-    }
-
-    private void configureButtons(){
-        previousButton.setOnAction(actionEvent -> System.out.println("Poprzednia piosenka"));
-        nextButton.setOnAction(actionEvent -> System.out.println("następna piosenka"));
-        playButton.setOnAction(actionEvent -> {
-            if (playButton.isSelected()){
-                System.out.println("Play");
-            }else System.out.println("Stop");
-        });
-
-    }
-
 }
