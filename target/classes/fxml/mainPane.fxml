@@ -14,12 +14,12 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.damkis1.mp3player.controller.MainController">
    <top>
-     <fx:include source="menuPane.fxml"></fx:include>
+      <fx:include source="menuPane.fxml" fx:id="menuPane"/>
    </top>
    <center>
-      <fx:include source="contentPane.fxml"></fx:include>
+      <fx:include source="contentPane.fxml" fx:id="contentPane"/>
    </center>
    <bottom>
-      <fx:include source="controlPane.fxml"></fx:include>
+      <fx:include source="controlPane.fxml" fx:id="controlPane"/>
    </bottom>
 </BorderPane>

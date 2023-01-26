@@ -1,42 +1,21 @@
 package pl.damkis1.mp3player.controller;
 
+
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.Slider;
-import javafx.scene.control.ToggleButton;
-import javafx.scene.input.MouseEvent;
 
 public class MainController {
 
     @FXML
-    private MenuItem aboutMenuItem;
-
+    private ContentPaneController contentPaneController;
     @FXML
-    private MenuItem closeMenuItem;
-
+    private ControlPaneController controlPaneController;
     @FXML
-    private MenuItem dirMenuItem;
-
-    @FXML
-    private MenuItem fileMenuItem;
-
-    @FXML
-    private Button nextButton;
-
-    @FXML
-    private ToggleButton playButton;
-
-    @FXML
-    private Button previousButton;
-
-    @FXML
-    private Slider progressSlider;
-
-    @FXML
-    private Slider volumeSlider;
+    private MenuPaneController menuPaneController;
 
     public void initialize() {
         System.out.println("Main controller created");
+        System.out.println(contentPaneController);
+        System.out.println(controlPaneController);
+        System.out.println(menuPaneController);
     }
 }

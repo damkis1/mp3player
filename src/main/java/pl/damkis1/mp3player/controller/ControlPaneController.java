@@ -23,6 +23,26 @@ public class ControlPaneController {
     @FXML
     private Slider volumeSlider;
 
+    public Button getNextButton() {
+        return nextButton;
+    }
+
+    public ToggleButton getPlayButton() {
+        return playButton;
+    }
+
+    public Button getPreviousButton() {
+        return previousButton;
+    }
+
+    public Slider getProgressSlider() {
+        return progressSlider;
+    }
+
+    public Slider getVolumeSlider() {
+        return volumeSlider;
+    }
+
     public void initialize(){
         System.out.println("Control controller created");
         configureVolume();
