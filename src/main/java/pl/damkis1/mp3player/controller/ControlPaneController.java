@@ -1,5 +1,7 @@
 package pl.damkis1.mp3player.controller;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
@@ -50,9 +52,12 @@ public class ControlPaneController {
     }
 
     private void configureVolume(){
-        volumeSlider.addEventFilter(MouseEvent.MOUSE_PRESSED, event ->{
-            System.out.println("Wciśnięto przysisk na suwaku");
+        volumeSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
+            System.out.println("Zmiana głośności: " + newValue.doubleValue());
         });
+
+        progressSlider.valueProperty().addListener(x ->
+                System.out.println("Przesunięcie piosenki"));
     }
 
     private void configureButtons(){
@@ -65,5 +70,7 @@ public class ControlPaneController {
         });
 
     }
+
+
 
 }
