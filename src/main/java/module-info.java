@@ -2,6 +2,7 @@ module mp3player {
     requires javafx.graphics;
     requires javafx.controls;
     requires javafx.fxml;
+    requires jid3lib;
 
     exports pl.damkis1.mp3player.main to javafx.graphics;
 

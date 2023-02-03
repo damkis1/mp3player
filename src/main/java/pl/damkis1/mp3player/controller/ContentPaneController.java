@@ -6,7 +6,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.farng.mp3.MP3File;
+import org.farng.mp3.TagException;
+import org.farng.mp3.id3.AbstractID3v2;
 import pl.damkis1.mp3player.mp3.Mp3Song;
+
+import java.io.File;
+import java.io.IOException;
 
 public class ContentPaneController {
     private static final String TITLE_COLUMN = "Tytuł";
@@ -16,7 +22,7 @@ public class ContentPaneController {
     @FXML
     private TableView<Mp3Song> contentTable;
 
-    public void initialize() {
+    public void initialize() throws TagException, IOException {
         configureTableColumns();
         createTestData();
     }
@@ -39,10 +45,21 @@ public class ContentPaneController {
 
     private void createTestData(){
         ObservableList<Mp3Song> item = contentTable.getItems();
-        item.add(new Mp3Song("a","a","a","a"));
-        item.add(new Mp3Song("b","b","b","b"));
-        item.add(new Mp3Song("c","c","c","c"));
-        item.add(new Mp3Song("c","c","c","c"));
+        Mp3Song mp3Song = createMp3SongFromPath("test.mp3");
+        item.add(mp3Song);
     }
 
+    private Mp3Song createMp3SongFromPath(String path){
+        File sourceFile = new File(path);
+        try {
+            MP3File mp3file = new MP3File(sourceFile);
+            String title = mp3file.getID3v2Tag().getAlbumTitle();
+            String author = mp3file.getID3v2Tag().getAuthorComposer();
+            String album = mp3file.getID3v2Tag().getAlbumTitle();
+            String absolutPath = sourceFile.getAbsolutePath();
+            return new Mp3Song(title, author, album, absolutPath);
+        } catch (IOException | TagException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
